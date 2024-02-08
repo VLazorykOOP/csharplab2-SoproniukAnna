@@ -135,13 +135,13 @@ namespace Lab2CSharp
                 n = Convert.ToInt32(Console.ReadLine());
             } while (n <= 0);
 
-            double[,] arr = new double[n, n];
+            int[,] arr = new int[n, n];
 
             for (int i = 0; i < n; i++)
                 for (int j = 0; j < n; j++)
                 {
                     Console.Write($"Input [{i}],[{j}] element of array: ");
-                    arr[i, j] = Convert.ToDouble(Console.ReadLine());
+                    arr[i, j] = Convert.ToInt32(Console.ReadLine());
                 }
 
             Console.WriteLine("Your array:");
@@ -152,7 +152,7 @@ namespace Lab2CSharp
                 Console.WriteLine();
             }
 
-            double diagonalSum = 0;
+            int diagonalSum = 0;
             for (int i = 0; i < n; i++)
                 diagonalSum += arr[i, n - 1 - i];
 
