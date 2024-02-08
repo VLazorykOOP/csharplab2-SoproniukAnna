@@ -11,7 +11,8 @@ namespace Lab2CSharp
             Task1_Var1();
             Console.WriteLine("          Task 1 Var 2");
             Task1_Var2();
-            Console.WriteLine();
+            Console.WriteLine("          Task 2");
+            Task2();
         }
 
         static void Task1_Var1()
@@ -82,6 +83,38 @@ namespace Lab2CSharp
                 Console.WriteLine($"The multiply of the elements is a three - digit number: {dob}");
             else
                 Console.WriteLine($"The multiply of the elements is NOT a three - digit number: {dob}");
+            Console.WriteLine();
+        }
+
+        static void Task2()
+        {
+
+            int n = 0;
+            do
+            {
+                Console.Write("Input size of array (n): ");
+                n = Convert.ToInt32(Console.ReadLine());
+            } while (n <= 0);
+
+            double[] arr = new double[n];
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write($"Input [{i}] element of array: ");
+                arr[i] = Convert.ToDouble(Console.ReadLine()); 
+            }
+
+            Console.WriteLine("Your array:");
+            for (int i = 0; i < n; i++)
+                Console.Write(arr[i] + "            ");
+            Console.WriteLine();
+
+            int k = 0;
+            for (int i = 1; i < n; i++)
+                if (arr[i] > arr[i - 1])
+                    k++;
+
+            Console.WriteLine($"The number of elements whose value is greater than the value of the previous element: {k}");
         }
     }
 }
