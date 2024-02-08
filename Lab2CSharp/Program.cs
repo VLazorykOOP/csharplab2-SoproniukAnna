@@ -17,7 +17,8 @@ namespace Lab2CSharp
             //Task2();
 
             Console.WriteLine("          Task 3");
-            Task3();
+            //Task3();
+            Task4();
         }
 
         static void Task1_Var1()
@@ -154,6 +155,54 @@ namespace Lab2CSharp
                 diagonalSum += arr[i, n - 1 - i];
 
             Console.WriteLine($"Sum of elements on the secondary diagonal: {diagonalSum}");
+            Console.WriteLine();
+        }
+
+        static void Task4() 
+        {
+            int n = 0;
+            do
+            {
+                Console.Write("Input size of array (n): ");
+                n = Convert.ToInt32(Console.ReadLine());
+            } while (n <= 0);
+
+            double[][] arr = new double[n][];
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write($"Input the number of elements in row {i}: ");
+               int m = Convert.ToInt32(Console.ReadLine());
+
+                arr[i] = new double[m];
+
+                for (int j = 0; j < m; j++)
+                {
+                    Console.Write($"Input element [{i},{j}]: ");
+                    arr[i][j] = Convert.ToInt32(Console.ReadLine());
+                }
+            }
+
+
+            Console.WriteLine("Your array:");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                for (int j = 0; j < arr[i].Length; j++)
+                    Console.Write(arr[i][j] + "             ");
+                Console.WriteLine();
+            }
+
+            double[] countArr = new double[n];
+            for (int i = 0; i < n; i++)
+                for (int j = 0; j < arr[i].Length; j++)
+                    if (arr[i][j] > 0)
+                        countArr[i]++;
+
+            Console.WriteLine("\nNumber of positive elements in each row:");
+
+            for (int i = 0; i < n; i++)
+                Console.WriteLine($"Row {i}: {countArr[i]} positive elements");
+
             Console.WriteLine();
         }
     }
