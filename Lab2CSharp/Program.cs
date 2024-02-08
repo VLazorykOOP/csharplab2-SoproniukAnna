@@ -9,15 +9,17 @@ namespace Lab2CSharp
             Console.WriteLine("          Lab 2 CSharp");
 
             Console.WriteLine("          Task 1 Var 1");
-            //Task1_Var1();
+            Task1_Var1();
             Console.WriteLine("          Task 1 Var 2");
-            //Task1_Var2();
+            Task1_Var2();
 
             Console.WriteLine("          Task 2");
-            //Task2();
+            Task2();
 
             Console.WriteLine("          Task 3");
-            //Task3();
+            Task3();
+
+            Console.WriteLine("          Task 4");
             Task4();
         }
 
@@ -172,14 +174,14 @@ namespace Lab2CSharp
             for (int i = 0; i < n; i++)
             {
                 Console.Write($"Input the number of elements in row {i}: ");
-               int m = Convert.ToInt32(Console.ReadLine());
+                int m = Convert.ToInt32(Console.ReadLine());
 
                 arr[i] = new double[m];
 
                 for (int j = 0; j < m; j++)
                 {
                     Console.Write($"Input element [{i},{j}]: ");
-                    arr[i][j] = Convert.ToInt32(Console.ReadLine());
+                    arr[i][j] = Convert.ToDouble(Console.ReadLine());
                 }
             }
 
