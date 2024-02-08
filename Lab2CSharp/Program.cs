@@ -173,8 +173,12 @@ namespace Lab2CSharp
 
             for (int i = 0; i < n; i++)
             {
-                Console.Write($"Input the number of elements in row {i}: ");
-                int m = Convert.ToInt32(Console.ReadLine());
+                int m = 0;
+                do
+                {
+                    Console.Write($"Input the number of elements in row {i}: ");
+                    m = Convert.ToInt32(Console.ReadLine());
+                } while (m > n);
 
                 arr[i] = new double[m];
 
